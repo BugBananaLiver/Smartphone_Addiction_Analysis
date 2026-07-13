@@ -9,7 +9,72 @@ Is there a direct correlation between the amount of notifications someone gets p
 
 ## Content
 
-The datasets come from different studies and do not contain the same participants. rather than joining individuals across datasets,  this project integrates both datasets into a single relational database and compares patterns in smartphone use, streass, addiction, and sleep across the two populations. 
+The datasets come from different studies and do not contain the same participants. Rather than joining individuals across datasets,  this project integrates both datasets into a single relational database and compares patterns in smartphone use, stress, addiction, and sleep across the two populations. 
+
+
+
+## Entity Relationship Diagram (ERD)
+
+```mermaid
+erDiagram
+
+    USERS_D1 {
+        TEXT user_id PK
+        INTEGER age
+        TEXT gender
+    }
+
+    BEHAVIOR_D1 {
+        TEXT user_id FK
+        INTEGER notifications_per_day
+        INTEGER app_opens_per_day
+        TEXT stress_level
+        TEXT addiction_level
+        TEXT addicted_label
+    }
+
+    HOURS_D1 {
+        TEXT user_id FK
+        REAL daily_screen_time_hours
+        REAL social_media_hours
+        REAL gaming_hours
+        REAL work_study_hours
+        REAL sleep_hours
+        REAL weekend_screen_time
+    }
+
+    USERS_D2 {
+        TEXT user_id PK
+        INTEGER age
+        TEXT gender
+        TEXT occupation
+    }
+
+    WELLBEING_D2 {
+        TEXT user_id FK
+        REAL sleep_quality_score
+        REAL stress_level
+        INTEGER caffeine_intake_cups
+        INTEGER physical_activity_minutes
+        INTEGER notifications_received_per_day
+        REAL mental_fatigue_score
+        TEXT stress_level_rank
+        TEXT screen_time_category
+    }
+
+    HOURS_D2 {
+        TEXT user_id FK
+        REAL daily_screen_time_hours
+        INTEGER phone_usage_before_sleep_minutes
+        REAL sleep_duration_hours
+    }
+
+    USERS_D1 ||--|| BEHAVIOR_D1 : contains
+    USERS_D1 ||--|| HOURS_D1 : tracks
+
+    USERS_D2 ||--|| WELLBEING_D2 : contains
+    USERS_D2 ||--|| HOURS_D2 : tracks
+```
 
 
 ## FAQ
