@@ -85,5 +85,6 @@ The DataSet was synthetically created to represent phone usage. This is not orga
 
 #### How many hours went into the creation of this project?
 
-As of May 17 2026, roughly 34 hours have gone into this project.
-As of July 8 2026, roughly 51 hours have gone into this project.
+As of May 17 2026, roughly 34 hours have gone into this project|
+As of July 8 2026, roughly 51 hours have gone into this project|
+As of July 13 2026, roughly 62 hours have gone into this project|
