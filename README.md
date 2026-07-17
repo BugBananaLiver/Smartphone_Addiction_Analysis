@@ -87,7 +87,22 @@ erDiagram
     USERS_D2 ||--|| HOURS_D2 : tracks
 ```
 
+## 3 Original Python Functions
 
+1.  Show all 3-min, average, and max- of a numerical column when grouped by a string column. Created while cleaning 2nd dataset.
+    ```
+    def summary_by_group(df, group_col, value_col):
+        return df.groupby(group_col)[value_col].agg(['min','mean', 'max'])
+2.  Create a column that categorizes the numerical amount of screen time hours into a string described by low, moderate, and high for easier readability.
+    ```
+    def screen_time_category(hours):
+
+            if hours < 3:
+                return "Low"
+            elif hours < 6:
+                return "Moderate"
+            else:
+                return "High"
 ## FAQ
 
 #### Is the DataSet synthetic or organic?
