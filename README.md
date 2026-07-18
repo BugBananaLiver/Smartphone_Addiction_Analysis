@@ -3,7 +3,7 @@
 Is there a direct correlation between the amount of notifications someone gets per day and their self reported smartphone addiction level?
 
 
-## Authors
+## Author
 
 - [@BugBananaLiver](https://www.github.com/BugBananaLiver)
 
@@ -17,10 +17,14 @@ Is there a direct correlation between the amount of notifications someone gets p
 *Kaggle -https://www.kaggle.com/datasets/jayjoshi37/sleep-screen-time-and-stress-analysis*
  
 
+## Project Scope
 
-## Content
+This project analyzes two independent smartphone usage datasets using Python, Pandas, SQLite, and SQL. Each dataset was cleaned, explored, and normalized into multiple related tables to reduce redundancy and improve organization. The cleaned data was then imported into a SQLite database where SQL queries were used to answer analytical questions and uncover trends.
 
-The datasets come from different studies and do not contain the same participants. Rather than joining individuals across datasets,  this project integrates both datasets into a single relational database and compares patterns in smartphone use, stress, addiction, and sleep across the two populations. 
+Although the datasets contain similar information, they represent different groups of users and therefore were analyzed independently. Instead of combining unrelated records, the project compares overall trends and differences between the datasets while using SQL joins within each dataset to connect demographic information with smartphone usage, sleep, stress, and wellbeing data.
+
+The goal of this project is to demonstrate the complete data analysis process, from cleaning raw data and designing a relational database to querying and visualizing meaningful results. The findings illustrate how demographic characteristics and smartphone usage patterns could help organizations identify groups that may benefit from digital wellbeing initiatives, sleep awareness campaigns, or workplace wellness programs. While the datasets are synthetic and do not establish cause-and-effect relationships, they provide a realistic environment for practicing data analysis, database design, and SQL development.
+
 
 
 
@@ -116,3 +120,34 @@ erDiagram
     As of July 8 2026, roughly 51 hours have gone into this project.
 
     As of July 13 2026, roughly 62 hours have gone into this project.
+
+#### Why didn't you join the two datasets together?
+
+    Although both datasets contain similar information, they represent different groups of users. Joining them by user_id would create relationships that do not exist. Instead, I have created a relational database that allows for comparisons between the datasets using summary statistics, while joins were only used within each dataset where the tables shared the same users. 
+
+#### Did you use AI assistance?
+
+    Yes, portions of this project were completed with the assistance of OpenAI's ChatGTP (GPT-5.5). ChatGPT was used to explain programming concepts, debug Python and SQL code errorss, and improve project documentaion. All code, analyses, and written explanations were reviewed, understood, and modified by the author.
+
+#### Which Python libraries did you use?
+
+    1. PANDAS
+    2. Matplotlib
+    3. Numpy
+    4. Seaborn
+    5. SQLite3
+
+
+
+
+## Related files
+1. Smartphone_Usage_And_Addiction.csv 
+2. Data_Cleanup.ipynb
+3. cleaned_smartphone_usage_and_addiction.csv
+4. sleep_mobile_stress_dataset_15000.csv
+5. Data_Cleanup_2nd.ipynb
+6. cleaned_sleep_mobile_stress_dataset_15000.csv
+7. Smartphone.db
+8. Smartphone_Database.SQL.ipynb
+9. requirements.txt
+10. README.md
