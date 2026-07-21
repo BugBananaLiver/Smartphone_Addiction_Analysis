@@ -16,8 +16,8 @@ The goal of this project is to demonstrate the complete data analysis process, f
 
 ## Key Findings
 1. **Age group vs. average screen time** Finding: Younger users (students/young adults) had the highest average screen time.
-2. **Occupation vs. average screen time and notifications** Findings: Students ranked highest for both metrics, although differences between occupations were all relatively small.
-3. **Users above the average screen time** Findings: A substantial number of users exceeded the overall average, suggesting that many individuals could benefit from education about healthy smartphone habits.
+2. **Occupation vs. average screen time and notifications** Findings: Students ranked highest for both metrics, although differences between occupations were all relatively small, suggesting occupation alone was not a strong predictor of smartphone use in this dataset.
+3. **Users above the average screen time** Findings: A portion of users exceeded the overall average, suggesting that many individuals could benefit from education about healthy smartphone habits.
 
 
 ## Entity Relationship Diagram (ERD)
@@ -187,6 +187,7 @@ deactivate
    July 8 2026, roughly 51 hours.
    July 13 2026, roughly 62 hours.
    July 20 2026, roughly 69 hours.
+   July 21 2026, roughly 74 hours. Project Completion.
 
 #### Why didn't you join the two datasets together?
 
