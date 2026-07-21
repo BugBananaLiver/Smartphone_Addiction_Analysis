@@ -1,4 +1,4 @@
-# Smartphone Addiction Analysis
+# Smartphone Usage Analysis
 
 ## Author
 
@@ -6,19 +6,22 @@
 ## Project Overview
 Which groups exhibit the highest smartphone usage patterns and how might these findings inform digital wellbeing initiatives?
 
+## Key Findings
+1. **Age group vs. average screen time** Finding: Younger users (students/young adults) had the highest average screen time.
+2. **Occupation vs. average screen time and notifications** Findings: Students ranked highest for both metrics, although differences between occupations were all relatively small, suggesting occupation alone was not a strong predictor of smartphone use in this dataset.
+3. **Users above the average screen time** Findings: A portion of users exceeded the overall average, suggesting that many individuals could benefit from education about healthy smartphone habits.
+```
+Overall, there was not a significant difference in smartphone usage, sleep hours, or amount of notifications across any demographic group in this analysis. This conclusion is primarily due to the data being synthetically created.
+```
+
+
 ## Project Scope
 
 This project analyzes two independent smartphone usage datasets using Python, Pandas, SQLite, and SQL. Each dataset was cleaned, explored, and normalized into multiple related tables (Users, Wellbeing, Behavior, and Hours) to reduce redundancy and improve organization. The cleaned data was then imported into a SQLite database where SQL queries were used to answer analytical questions, uncover trends and joins were used to reconnect the data.
 
 Although the datasets contain similar information, they represent different groups of users and therefore were analyzed independently. Instead of combining unrelated records, the project compares overall trends and differences between the datasets while using SQL joins within each dataset to connect demographic information with smartphone usage, sleep, stress, and wellbeing data.
 
-The goal of this project is to demonstrate the complete data analysis process, from cleaning raw data and designing a relational database to querying and visualizing meaningful results. The findings illustrate how demographic characteristics and smartphone usage patterns could help organizations identify groups that may benefit from digital wellbeing initiatives, sleep awareness campaigns, or workplace wellness programs. While the datasets are synthetic and do not establish cause-and-effect relationships, they provide a realistic environment for practicing data analysis, database design, and SQL development.
-
-## Key Findings
-1. **Age group vs. average screen time** Finding: Younger users (students/young adults) had the highest average screen time.
-2. **Occupation vs. average screen time and notifications** Findings: Students ranked highest for both metrics, although differences between occupations were all relatively small, suggesting occupation alone was not a strong predictor of smartphone use in this dataset.
-3. **Users above the average screen time** Findings: A portion of users exceeded the overall average, suggesting that many individuals could benefit from education about healthy smartphone habits.
-
+The goal of this project is to demonstrate the complete data analysis process, from cleaning raw data and designing a relational database to querying and visualizing meaningful results. The findings illustrate how demographic characteristics and smartphone usage patterns could help organizations identify groups that may benefit from digital wellbeing initiatives, sleep awareness campaigns, or workplace wellness programs. While the datasets are synthetic and do not establish cause-and-effect relationships and interesting data storytelling, they do provide a realistic environment for practicing data analysis, database design, and SQL development.
 
 ## Entity Relationship Diagram (ERD)
 
@@ -155,10 +158,12 @@ source venv/bin/activate
 pip install - r requirements.txt
 ```
 ### 5. Run the project
+```
 Open the notebooks in VS Code or Jupyter Notebook and run them in this order:
 1. `Data_Cleanup.ipynb`
 2. `Data_Cleanup_2nd.ipynb`
 3. `Smartphone_Database_SQL.ipynb`
+```
 
 ### 6.Deactivate the virtual environment
 ```bash
@@ -168,11 +173,11 @@ deactivate
 ## Sources
 
 **Smartphone_Usage_And_Addiction** 
-*Kaggle -https://www.kaggle.com/datasets/zahranusratt/smartphone-usage-and-addiction-analysis-dataset*
+*Kaggle-Zahra Nusrat -https://www.kaggle.com/datasets/zahranusratt/smartphone-usage-and-addiction-analysis-dataset*
 
 
 **Sleep_mobile_stress_dataset**
-*Kaggle -https://www.kaggle.com/datasets/jayjoshi37/sleep-screen-time-and-stress-analysis*
+*Kaggle-Jay Joshi -https://www.kaggle.com/datasets/jayjoshi37/sleep-screen-time-and-stress-analysis*
 
 
 ## FAQ
@@ -195,7 +200,7 @@ deactivate
 
 #### Did you use AI assistance?
 
-    Yes, portions of this project were completed with the assistance of OpenAI's ChatGTP (GPT-5.5). ChatGPT was used to explain programming concepts, debug Python and SQL code errorss, and improve project documentaion. All code, analyses, and written explanations were reviewed, understood, and modified by the author. AI was a useful partner for better understanding and excuting the structure of the project.
+    Yes, portions of this project were completed with the assistance of OpenAI's ChatGTP (GPT-5.5). ChatGPT was used to explain programming concepts, debug Python and SQL code errors, and improve project documentaion. All code, analysis, and written explanations were reviewed, understood, and modified by the author prior to being used. AI was a useful partner for better understanding and executing the structure of the project.
 
 #### Which technologies did you use?
 
