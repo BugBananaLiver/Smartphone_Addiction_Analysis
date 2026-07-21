@@ -1,31 +1,23 @@
 # Smartphone Addiction Analysis
 
-Is there a direct correlation between the amount of notifications someone gets per day and their self reported smartphone addiction level?
-
-
 ## Author
 
 - [@BugBananaLiver](https://www.github.com/BugBananaLiver)
-
-## Sources
-
-**Smartphone_Usage_And_Addiction** 
-*Kaggle -https://www.kaggle.com/datasets/zahranusratt/smartphone-usage-and-addiction-analysis-dataset*
-
-
-**Sleep_mobile_stress_dataset**
-*Kaggle -https://www.kaggle.com/datasets/jayjoshi37/sleep-screen-time-and-stress-analysis*
- 
+## Project Overview
+Which groups exhibit the highest smartphone usage patterns and how might these findings inform digital wellbeing initiatives?
 
 ## Project Scope
 
-This project analyzes two independent smartphone usage datasets using Python, Pandas, SQLite, and SQL. Each dataset was cleaned, explored, and normalized into multiple related tables to reduce redundancy and improve organization. The cleaned data was then imported into a SQLite database where SQL queries were used to answer analytical questions and uncover trends.
+This project analyzes two independent smartphone usage datasets using Python, Pandas, SQLite, and SQL. Each dataset was cleaned, explored, and normalized into multiple related tables (Users, Wellbeing, Behavior, and Hours) to reduce redundancy and improve organization. The cleaned data was then imported into a SQLite database where SQL queries were used to answer analytical questions, uncover trends and joins were used to reconnect the data.
 
 Although the datasets contain similar information, they represent different groups of users and therefore were analyzed independently. Instead of combining unrelated records, the project compares overall trends and differences between the datasets while using SQL joins within each dataset to connect demographic information with smartphone usage, sleep, stress, and wellbeing data.
 
 The goal of this project is to demonstrate the complete data analysis process, from cleaning raw data and designing a relational database to querying and visualizing meaningful results. The findings illustrate how demographic characteristics and smartphone usage patterns could help organizations identify groups that may benefit from digital wellbeing initiatives, sleep awareness campaigns, or workplace wellness programs. While the datasets are synthetic and do not establish cause-and-effect relationships, they provide a realistic environment for practicing data analysis, database design, and SQL development.
 
-
+## Key Findings
+1. **Age group vs. average screen time** Finding: Younger users (students/young adults) had the highest average screen time.
+2. **Occupation vs. average screen time and notifications** Findings: Students ranked highest for both metrics, although differences between occupations were all relatively small.
+3. **Users above the average screen time** Findings: A substantial number of users exceeded the overall average, suggesting that many individuals could benefit from education about healthy smartphone habits.
 
 
 ## Entity Relationship Diagram (ERD)
@@ -91,35 +83,110 @@ erDiagram
     USERS_D2 ||--|| HOURS_D2 : tracks
 ```
 
-## 3 Original Python Functions
 
-1.  Show all 3-min, average, and max- of a numerical column when grouped by a string column. Created while cleaning 2nd dataset.
-    ```
-    def summary_by_group(df, group_col, value_col):
-        return df.groupby(group_col)[value_col].agg(['min','mean', 'max'])
-2.  Create a column that categorizes the numerical amount of screen time hours into a string described by low, moderate, and high for easier readability.
-    ```
-    def screen_time_category(hours):
+## Project Structure
+| File | Description|
+|------|------------|
+|
+`Smartphone_Usage_And_Addiction.csv`| Original data file|
+|
+`Data_Cleanup.ipynb`| Cleans and processes original dataset|
+|
+`cleaned_smartphone_usage_and_addiction.csv`| Cleaned version of the original dataset|
+|
+`sleep_mobile_stress_dataset_15000.csv`| Second original data file|
+|
+`Data_Cleanup_2nd.ipynb`|Cleans and processes second original dataset|
+|
+`cleaned_sleep_mobile_stress_dataset_15000.csv`|Cleaned version of the second dataset|
+|
+`Smartphone_Database.SQL.ipynb`|Creates SQLite database, performns SQL queries, and analyzes results|
+|
+`requirements.txt`|Lists the python packages required to run the project|
+|
+`README.md`|Documentation describing the project, setup instructions, and findings|
 
-            if hours < 3:
-                return "Low"
-            elif hours < 6:
-                return "Moderate"
-            else:
-                return "High"
+
+
+## Installation
+
+### 1. Clone the repository
+**Windows**
+```bash
+git clone
+https://github.com/BugBananaLiver/Smartphone_Addiction_Analysis.git
+cd Smartphone_Addiction_Analysis
+```
+**macOS/Linux**
+```bash
+git clone
+https://github.com/BugBananaLiver/Smartphone_Addiction_Analysis.git
+cd Smartphone_Addiction_Analysis
+```
+
+### 2. Create a virtual environment
+**Windows**
+```bash
+python -m venv venv
+```
+
+**macOS/Linux**
+```bash
+python3 -m venv venv
+```
+
+### 3. Activate the virtual environment
+**Windows (Command Prompt)**
+```bash
+venv\Scripts\activate
+```
+**Windows (PowerShell)**
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+**macOS/Linux**
+```bash
+source venv/bin/activate
+```
+### 4. Install dependencies
+
+**Windows, macOS, Linux**
+```bash
+pip install - r requirements.txt
+```
+### 5. Run the project
+Open the notebooks in VS Code or Jupyter Notebook and run them in this order:
+1. `Data_Cleanup.ipynb`
+2. `Data_Cleanup_2nd.ipynb`
+3. `Smartphone_Database_SQL.ipynb`
+
+### 6.Deactivate the virtual environment
+```bash
+deactivate
+```
+
+## Sources
+
+**Smartphone_Usage_And_Addiction** 
+*Kaggle -https://www.kaggle.com/datasets/zahranusratt/smartphone-usage-and-addiction-analysis-dataset*
+
+
+**Sleep_mobile_stress_dataset**
+*Kaggle -https://www.kaggle.com/datasets/jayjoshi37/sleep-screen-time-and-stress-analysis*
+
+
 ## FAQ
 
-#### Is the DataSet synthetic or organic?
+#### Are the DataSets synthetic or collected?
 
-    The DataSet was synthetically created to represent phone usage. This is not organic data.
+    Both DataSets were synthetically created by another user to represent phone usage and stress factors. This is not organic data.
 
 #### How many hours went into the creation of this project?
 
-    As of May 17 2026, roughly 34 hours have gone into this project.
-
-    As of July 8 2026, roughly 51 hours have gone into this project.
-
-    As of July 13 2026, roughly 62 hours have gone into this project.
+   May 17 2026, roughly 34 hours.
+   July 8 2026, roughly 51 hours.
+   July 13 2026, roughly 62 hours.
+   July 20 2026, roughly 69 hours.
 
 #### Why didn't you join the two datasets together?
 
@@ -127,27 +194,19 @@ erDiagram
 
 #### Did you use AI assistance?
 
-    Yes, portions of this project were completed with the assistance of OpenAI's ChatGTP (GPT-5.5). ChatGPT was used to explain programming concepts, debug Python and SQL code errorss, and improve project documentaion. All code, analyses, and written explanations were reviewed, understood, and modified by the author.
+    Yes, portions of this project were completed with the assistance of OpenAI's ChatGTP (GPT-5.5). ChatGPT was used to explain programming concepts, debug Python and SQL code errorss, and improve project documentaion. All code, analyses, and written explanations were reviewed, understood, and modified by the author. AI was a useful partner for better understanding and excuting the structure of the project.
 
-#### Which Python libraries did you use?
+#### Which technologies did you use?
 
-    1. PANDAS
-    2. Matplotlib
-    3. Numpy
-    4. Seaborn
-    5. SQLite3
-
-
-
-
-## Related files
-1. Smartphone_Usage_And_Addiction.csv 
-2. Data_Cleanup.ipynb
-3. cleaned_smartphone_usage_and_addiction.csv
-4. sleep_mobile_stress_dataset_15000.csv
-5. Data_Cleanup_2nd.ipynb
-6. cleaned_sleep_mobile_stress_dataset_15000.csv
-7. Smartphone.db
-8. Smartphone_Database.SQL.ipynb
-9. requirements.txt
-10. README.md
+    Python
+    SQL
+    PANDAS
+    Matplotlib
+    Numpy
+    Seaborn
+    SQLite3
+    Jupyter Notebook
+    Visual Studio Code
+    Git
+    GitHub
+    
